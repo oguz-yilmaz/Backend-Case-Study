@@ -88,6 +88,6 @@ to save data from the provider to database. You can simple run the [command](#sa
 cd into the **docker** folder then run the following command
 
 ```bash
-docker-compose exec php bin/console todo:save
+docker-compose exec php php bin/console todo:save
 ```
 
