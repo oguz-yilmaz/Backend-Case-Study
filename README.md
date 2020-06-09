@@ -83,7 +83,14 @@ If you want to add new provider and save it to database, you can add custom prov
 under `src/Service/Todo/Providers/Concrete` folder.   
 
 After adding the class, there is no need for additional initialization
-to save data from the provider to database. You can simple run the [command](#saving-tasks-to-database) afterwards.
+to save data from the provider to database. You can simple run the [command](#saving-tasks-to-database) afterwards.  
+
+This is achieved by following `Facade` function;
+
+```php
+$em = $this->container->get('doctrine')->getManager();
+Facade::saveProvidersToDb($em);
+```
 
 ## Saving Tasks To Database
 
