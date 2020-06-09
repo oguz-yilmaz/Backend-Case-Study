@@ -523,3 +523,7 @@
 172.18.0.1 - - [09/Jun/2020:17:44:35 +0000] "GET /css/bootstrap.min.css HTTP/1.1" 200 160403 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"
 172.18.0.1 - - [09/Jun/2020:17:44:40 +0000] "GET /_wdt/b655bc HTTP/1.1" 200 16396 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"
 172.18.0.1 - - [09/Jun/2020:17:44:41 +0000] "GET /favicon.ico HTTP/1.1" 404 258214 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"
+172.18.0.1 - - [09/Jun/2020:18:42:35 +0000] "GET / HTTP/1.1" 200 92900 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"
+172.18.0.1 - - [09/Jun/2020:18:42:35 +0000] "GET /css/bootstrap.min.css HTTP/1.1" 200 160403 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"
+172.18.0.1 - - [09/Jun/2020:18:42:40 +0000] "GET /_wdt/d8b652 HTTP/1.1" 200 16412 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"
+172.18.0.1 - - [09/Jun/2020:18:42:40 +0000] "GET /favicon.ico HTTP/1.1" 404 258213 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"

@@ -2,6 +2,8 @@
 
 namespace App\Service\Todo;
 
+use App\Service\Todo\Exceptions\ParserException;
+use App\Service\Todo\Exceptions\ResourceNotFoundException;
 use App\Service\Todo\Providers\ProviderInterface;
 
 class Todo {
@@ -21,7 +23,12 @@ class Todo {
 	}
 
 	public function getTasks( $providerName ) {
-		return json_decode( file_get_contents( $this->providers[ $providerName ]->getEndpoint() ) );
+		$json = json_decode( file_get_contents( $this->providers[ $providerName ]->getEndpoint() ) );
+		if ( $json === false ) {
+			throw new ResourceNotFoundException( "No tasks defined!" );
+		}
+
+		return $json;
 	}
 
 	private function _parse( $providerName ) {
@@ -32,8 +39,13 @@ class Todo {
 	}
 
 	public function parse() {
-		foreach ( $this->providers as $provider ) {
-			$this->_parse( $provider->getName() );
+
+		try {
+			foreach ( $this->providers as $provider ) {
+				$this->_parse( $provider->getName() );
+			}
+		} catch ( \Exception $e ) {
+			throw new ParserException( $e->getMessage() );
 		}
 
 		return $this->results;

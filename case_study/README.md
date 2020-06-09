@@ -3,6 +3,7 @@
 1. [Installation](#installation)  
 2. [Usage](#usage)  
 3. [Save Tasks To Database](#saving-tasks-to-database)  
+4. [Running Web Server](#running-web-server) 
 
 ## Installation
 
@@ -33,6 +34,7 @@ $ php composer install
 
 Either way, you need an local php installation.  
 After installation you can go ahead and run the [command](#saving-tasks-to-database) to save tasks to database and eventually have them appear at the homepage.
+
 ## Usage
 
 ### Option 1
@@ -89,5 +91,13 @@ cd into the **docker** folder then run the following command
 
 ```bash
 docker-compose exec php php bin/console todo:save
+```
+
+## Running Web Server
+
+
+```bash
+$ cd docker
+$ docker-compose up
 ```
 
