@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Provider Name</th>
+            <th scope="col">Finishes At</th>
+            <th scope="col">Developer Work Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for key, datas in data %}
+
+            <tr>
+                <td style="font-size: xx-large">{{ key }}</td>
+                <td style="font-size: x-large"><strong>{{ data[key]['completedWeek'] + 1 }}.th</strong>  week</td>
+                {% set weekCompleted = data[key]['completedWeek'] %}
+                <td>
+                    {% for key, d in data[key]['lastWeekDevHours'] %}
+                    <strong>Dev{{ loop.revindex }}</strong> needs to work <strong>{{ d }} hours</strong> at <strong>{{ weekCompleted + 1 }}.th week</strong> <br>
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<br>
+<br>
+    <h1 class="display-2 text-center">Providers and Tasks</h1>
+
+    <div class="container-fluid">
+        <div class="row">
+            {% for key, datas in data %}
+                <div class="col-sm text-center">
+                    <h1 class="display-3 text-center">{{ key }}</h1>
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Task Id</th>
+                            <th scope="col">Difficulty Level</th>
+                            <th scope="col">Duration</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for d in data[key]['data'] %}
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td>{{d.getTodoId()}}</td>
+                                <td>{{d.getDifficultyLevel()}}</td>
+                                <td>{{d.getDuration()}}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
